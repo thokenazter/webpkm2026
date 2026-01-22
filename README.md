@@ -1,59 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 Website Puskesmas Rawat Inap Kabalsiang Benjuring
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website resmi Puskesmas Rawat Inap Kabalsiang Benjuring, Kecamatan Aru Utara Timur Batuley, Kabupaten Kepulauan Aru, Maluku.
 
-## About Laravel
+## 📋 Tentang
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Website ini dibangun untuk memberikan informasi lengkap tentang layanan kesehatan yang tersedia di Puskesmas Rawat Inap Kabalsiang Benjuring. Dengan menerapkan **Integrasi Layanan Primer (ILP)**, Puskesmas melayani seluruh siklus kehidupan masyarakat dari ibu dan anak hingga lanjut usia.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Status Puskesmas
+- 🏠 **Wilayah Kerja:** 5 Desa
+- 🛏️ **Jenis Layanan:** Rawat Inap + UGD 24 Jam
+- 🏆 **Akreditasi:** UTAMA (Kemenkes RI)
+- 👥 **Populasi Dilayani:** ±3.188 Jiwa
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fitur Website
 
-## Learning Laravel
+### Halaman Publik
+- 🏠 **Beranda** - Hero section, info klaster, berita & galeri carousel
+- 📚 **Layanan Klaster** - 5 klaster layanan kesehatan terintegrasi
+- 👥 **Struktur Organisasi** - Tim dan kepemimpinan Puskesmas
+- 📰 **Berita & Kegiatan** - Informasi terkini dengan kategori dan pencarian
+- 🖼️ **Galeri** - Dokumentasi kegiatan dengan lightbox
+- 📧 **Hubungi Kami** - Form kontak untuk pertanyaan dan masukan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Panel Admin
+- 📊 **Dashboard** - Statistik berita, galeri, dan pesan
+- ✏️ **CRUD Berita** - Kelola artikel dengan rich text editor
+- 🖼️ **CRUD Galeri** - Upload dan kelola foto kegiatan
+- 🏷️ **Kategori** - Organisasi konten
+- 📬 **Pesan Masuk** - Baca dan balas pesan pengunjung
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Teknologi
 
-## Laravel Sponsors
+| Teknologi | Versi | Deskripsi |
+|-----------|-------|-----------|
+| Laravel | 11.x | PHP Framework |
+| TailwindCSS | 3.x | Utility-first CSS |
+| Alpine.js | 3.x | Lightweight JS framework |
+| Swiper.js | 11.x | Modern carousel |
+| SQLite | - | Database |
+| Vite | 5.x | Build tool |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Instalasi
 
-### Premium Partners
+### Prasyarat
+- PHP 8.2+
+- Composer
+- Node.js 18+
+- npm/pnpm
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Langkah Instalasi
 
-## Contributing
+```bash
+# Clone repository
+git clone https://github.com/thokenazter/webpkm2026.git
+cd webpkm2026
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Install dependencies
+composer install
+npm install
 
-## Code of Conduct
+# Setup environment
+cp .env.example .env
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Database
+php artisan migrate
+php artisan db:seed --class=AdminSeeder
 
-## Security Vulnerabilities
+# Build assets
+npm run build
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Jalankan server
+php artisan serve
+```
 
-## License
+### Akses Admin Panel
+- URL: `/admin`
+- Email: `admin@puskesmas.id`
+- Password: `password`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📁 Struktur Folder
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/          # Controller admin panel
+│   │   ├── BeritaController.php
+│   │   ├── ContactController.php
+│   │   └── HomeController.php
+│   └── Models/             # Eloquent models
+├── resources/
+│   ├── views/
+│   │   ├── admin/          # Views admin panel
+│   │   ├── berita/         # Halaman berita
+│   │   ├── components/     # Komponen reusable
+│   │   ├── klaster/        # Halaman klaster
+│   │   └── home.blade.php  # Halaman utama
+│   └── css/app.css         # Styling TailwindCSS
+└── public/
+    └── images/             # Asset gambar
+```
+
+## 🎨 Fitur UI/UX
+
+- ✅ **Responsive Design** - Optimal di desktop, tablet, dan mobile
+- ✅ **Glassmorphism Navbar** - iOS-style frosted glass effect
+- ✅ **Modern Cards** - Shadcn-inspired design system
+- ✅ **Smooth Animations** - Hover effects dan transitions
+- ✅ **Lightbox Gallery** - Zoom foto dengan overlay modal
+- ✅ **Auto-play Carousel** - Swiper.js untuk galeri
+
+## 📝 Layanan Klaster
+
+1. **Klaster 1** - Manajemen Puskesmas
+2. **Klaster 2** - Kesehatan Ibu dan Anak
+3. **Klaster 3** - Usia Dewasa dan Lanjut Usia
+4. **Klaster 4** - Penyakit Menular & Kesehatan Lingkungan
+5. **Lintas Klaster** - Program lintas sektor
+
+## 📄 Lisensi
+
+Proyek ini dikembangkan untuk Puskesmas Rawat Inap Kabalsiang Benjuring.
+
+---
+
+**© 2026 Beta | Development**  
+Puskesmas Rawat Inap Kabalsiang Benjuring  
+Desa Benjuring, Kecamatan Aru Utara Timur Batuley
