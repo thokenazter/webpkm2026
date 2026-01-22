@@ -1,0 +1,199 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Puskesmas Color Palette */
+    --color-primary-50: #ecfdf5;
+    --color-primary-100: #d1fae5;
+    --color-primary-200: #a7f3d0;
+    --color-primary-300: #6ee7b7;
+    --color-primary-400: #34d399;
+    --color-primary-500: #10b981;
+    --color-primary-600: #059669;
+    --color-primary-700: #047857;
+    --color-primary-800: #065f46;
+    --color-primary-900: #064e3b;
+    --color-primary-950: #022c22;
+
+    /* Accent Blue */
+    --color-accent-50: #eff6ff;
+    --color-accent-100: #dbeafe;
+    --color-accent-200: #bfdbfe;
+    --color-accent-300: #93c5fd;
+    --color-accent-400: #60a5fa;
+    --color-accent-500: #3b82f6;
+    --color-accent-600: #2563eb;
+    --color-accent-700: #1d4ed8;
+    --color-accent-800: #1e40af;
+    --color-accent-900: #1e3a8a;
+
+    /* Neutral/Slate */
+    --color-neutral-50: #f8fafc;
+    --color-neutral-100: #f1f5f9;
+    --color-neutral-200: #e2e8f0;
+    --color-neutral-300: #cbd5e1;
+    --color-neutral-400: #94a3b8;
+    --color-neutral-500: #64748b;
+    --color-neutral-600: #475569;
+    --color-neutral-700: #334155;
+    --color-neutral-800: #1e293b;
+    --color-neutral-900: #0f172a;
+    --color-neutral-950: #020617;
+}
+
+/* iOS-style Frosted Glass Navbar (Apple Design) */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+
+.glass-navbar.glass-scrolled {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* iOS-style Glass for Mobile Menu */
+.glass-mobile {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.glass-navbar-dark {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Shadcn-like Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-600);
+    color: white;
+    padding: 0.625rem 1.25rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-700);
+}
+
+.btn-secondary {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-800);
+    padding: 0.625rem 1.25rem;
+    border: 1px solid var(--color-neutral-200);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-neutral-200);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary-600);
+    padding: 0.625rem 1.25rem;
+    border: 1px solid var(--color-primary-600);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary-50);
+}
+
+/* Shadcn-like Card Styles */
+.card {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-neutral-200);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+}
+
+.card-hover:hover {
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Gradient Background */
+.gradient-hero {
+    background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-accent-600) 100%);
+}
+
+.gradient-hero-soft {
+    background: linear-gradient(180deg, var(--color-primary-50) 0%, white 100%);
+}
+
+/* Mobile Menu Animation */
+.mobile-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.hidden {
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Scroll Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Icon Styles */
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-600);
+}
+
+.icon-wrapper-lg {
+    width: 4rem;
+    height: 4rem;
+}

@@ -1,0 +1,27 @@
+# robots.txt for Puskesmas Rawat Inap Kabalsiang Benjuring
+# Website: https://puskesmaskabalsiang.go.id (ganti dengan domain Anda)
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /storage/
+Disallow: /_debugbar/
+Disallow: /api/
+Disallow: /sanctum/
+
+# Izinkan crawling file penting
+Allow: /sitemap.xml
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Sitemap location
+Sitemap: https://puskesmaskabalsiang.go.id/sitemap.xml
+
+# Crawl-delay (opsional, untuk mengurangi beban server)
+Crawl-delay: 10
