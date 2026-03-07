@@ -1,0 +1,68 @@
+/* Dark Theme Support for 3D Login */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #4c51bf;
+        --secondary-color: #553c9a;
+        --accent-color: #ed64a6;
+        --text-color: #f7fafc;
+        --glass-bg: rgba(0, 0, 0, 0.4);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+    
+    .login-container {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+    }
+    
+    .login-card {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-input {
+        background: rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-input:focus {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .shape {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Manual Dark Mode Toggle */
+.dark-mode {
+    --primary-color: #4c51bf;
+    --secondary-color: #553c9a;
+    --accent-color: #ed64a6;
+    --text-color: #f7fafc;
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .login-container {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+}
+
+.dark-mode .login-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .form-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .form-input:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .shape {
+    background: rgba(255, 255, 255, 0.05);
+}

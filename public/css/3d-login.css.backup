@@ -1,0 +1,115 @@
+
+
+/* ===== REGISTER PAGE SPECIFIC STYLES ===== */
+
+/* Error Container for Register Page */
+.error-container {
+    background: rgba(229, 62, 62, 0.1);
+    border: 1px solid rgba(229, 62, 62, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.error-container .error-text {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin: 5px 0;
+    display: block;
+}
+
+/* Terms and Privacy Policy Checkbox */
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.checkbox-input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+}
+
+.checkbox-input:checked {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.checkbox-input:checked::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+    margin: 0;
+}
+
+.terms-link {
+    color: #4ecdc4;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #45b7d1;
+    text-decoration: none;
+}
+
+/* Register Page Mobile Optimizations */
+@media (max-width: 768px) {
+    .terms-checkbox {
+        gap: 10px;
+    }
+    
+    .checkbox-input {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .checkbox-label {
+        font-size: 13px;
+    }
+    
+    .error-container {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-checkbox {
+        gap: 8px;
+    }
+    
+    .checkbox-input {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .checkbox-label {
+        font-size: 12px;
+    }
+}
+

@@ -1,0 +1,601 @@
+/* Page Transition Animations */
+
+/* Base transition styles */
+.page-transition {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Exit animations */
+.page-exit {
+    animation: pageSlideOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-exit-up {
+    animation: pageSlideOutUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-exit-down {
+    animation: pageSlideOutDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Enter animations */
+.page-enter {
+    animation: pageSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-enter-from-up {
+    animation: pageSlideInFromUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-enter-from-down {
+    animation: pageSlideInFromDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Keyframe animations */
+@keyframes pageSlideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.95);
+    }
+}
+
+@keyframes pageSlideOutUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.95);
+    }
+}
+
+@keyframes pageSlideOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.95);
+    }
+}
+
+@keyframes pageSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes pageSlideInFromUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pageSlideInFromDown {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Card specific transitions */
+.login-card.transitioning {
+    pointer-events: none;
+}
+
+/* Character transition states */
+.character.transitioning {
+    animation: characterWave 0.6s ease-in-out;
+}
+
+@keyframes characterWave {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+/* Loading overlay for smooth transitions */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.transition-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Floating shapes during transition */
+.floating-shapes.transitioning .shape {
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+/* Crab Journey Loading Animation */
+.transition-scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.crab-journey-container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+/* Walking Crab */
+.walking-crab {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: crabWalk 3s ease-in-out infinite;
+}
+
+.crab-body {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    animation: crabBob 0.6s ease-in-out infinite;
+}
+
+.crab-shell {
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50% 50% 40% 40%;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.crab-shell::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    background: linear-gradient(135deg, #ff7675, #fd79a8);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* Crab Eyes */
+.crab-eye {
+    position: absolute;
+    top: -15px;
+    animation: eyeLook 2s ease-in-out infinite;
+}
+
+.left-eye {
+    left: 10px;
+    animation-delay: 0.1s;
+}
+
+.right-eye {
+    right: 10px;
+    animation-delay: 0.2s;
+}
+
+.eye-stalk {
+    width: 4px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.eye-ball {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    margin: -2px auto 0;
+    position: relative;
+}
+
+.eye-ball::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #2d3436;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    animation: eyeMove 1.5s ease-in-out infinite;
+}
+
+/* Crab Claws */
+.crab-claw {
+    position: absolute;
+    width: 15px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 50% 20% 50% 20%;
+    top: 10px;
+}
+
+.left-claw {
+    left: -10px;
+    transform: rotate(-20deg);
+    animation: clawWave 0.8s ease-in-out infinite;
+}
+
+.right-claw {
+    right: -10px;
+    transform: rotate(20deg);
+    animation: clawWave 0.8s ease-in-out infinite reverse;
+}
+
+/* Crab Legs */
+.crab-legs {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+}
+
+.leg {
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 2px;
+    transform-origin: top center;
+}
+
+.leg-1 {
+    left: 5px;
+    animation: legWalk1 0.6s ease-in-out infinite;
+}
+
+.leg-2 {
+    left: 15px;
+    animation: legWalk2 0.6s ease-in-out infinite;
+}
+
+.leg-3 {
+    right: 15px;
+    animation: legWalk1 0.6s ease-in-out infinite;
+}
+
+.leg-4 {
+    right: 5px;
+    animation: legWalk2 0.6s ease-in-out infinite;
+}
+
+/* Journey Path */
+.journey-path {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.path-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    border-radius: 1px;
+}
+
+.path-dots {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: dotGlow 1s ease-in-out infinite;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.dot:nth-child(4) { animation-delay: 0.6s; }
+.dot:nth-child(5) { animation-delay: 0.8s; }
+
+/* Destination Icons */
+.destination-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.destination-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+.destination-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.login-icon {
+    animation-delay: 0s;
+}
+
+.register-icon {
+    animation-delay: 1s;
+}
+
+/* Loading Text */
+.loading-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.journey-message {
+    font-size: 16px;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.loading-dots {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.loading-dots span {
+    animation: dotBounce 1.4s ease-in-out infinite;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframe Animations */
+@keyframes crabWalk {
+    0% {
+        left: 0;
+        transform: translateY(-50%) scaleX(1);
+    }
+    20% {
+        left: 20%;
+        transform: translateY(-50%) scaleX(1) rotate(5deg);
+    }
+    40% {
+        left: 40%;
+        transform: translateY(-50%) scaleX(1) rotate(-5deg);
+    }
+    50% {
+        left: 50%;
+        transform: translateY(-50%) scaleX(-1) rotate(0deg);
+    }
+    70% {
+        left: 70%;
+        transform: translateY(-50%) scaleX(-1) rotate(5deg);
+    }
+    90% {
+        left: 90%;
+        transform: translateY(-50%) scaleX(-1) rotate(-5deg);
+    }
+    100% {
+        left: calc(100% - 60px);
+        transform: translateY(-50%) scaleX(-1);
+    }
+}
+
+@keyframes crabBob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes eyeLook {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes eyeMove {
+    0%, 100% {
+        left: 2px;
+    }
+    50% {
+        left: 1px;
+    }
+}
+
+@keyframes clawWave {
+    0%, 100% {
+        transform: rotate(-20deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-30deg) translateY(-2px);
+    }
+}
+
+@keyframes legWalk1 {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes legWalk2 {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes dotGlow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes dotBounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* Special Effects */
+.walking-crab::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 8px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.2), transparent);
+    border-radius: 50%;
+    animation: shadowMove 0.6s ease-in-out infinite;
+}
+
+@keyframes shadowMove {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+/* Excited crab when reaching destination */
+.walking-crab.excited {
+    animation: crabExcited 0.5s ease-in-out infinite;
+}
+
+@keyframes crabExcited {
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        transform: translateY(-60%) scale(1.1);
+    }
+}
+
+/* Bubble trail effect */
+.crab-journey-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    animation: bubbleFloat 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.8;
+    }
+}

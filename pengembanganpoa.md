@@ -1,0 +1,2 @@
+lakukan analisa pada lpj_participants, lpjs, rab_items, rabs, rab_kegiatans, rab_menu, poas, dan poa_participants.
+pada saat saya ingin membuat LPJ SPPT dan SPPD, dari rab sudah membatasi pegawai sesuai jumlah pegawai dari kegiatan tersebut yang terdapat pada RAB. apakah, hal yang sama bisa dilakukan juga pada POA? jadi admin menentukan pegawai yang melaksanakan kegiatan tersebut di contoh bulan januari. maka ketika pegawai tersebut langsung di otomatis berada pada lpj pariticipants.
